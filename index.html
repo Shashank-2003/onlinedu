@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Responsive Online Education Website Design </title>
+
+
+
+    <!-- Swipejs link - for mobile touch slider activation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Font awesome cdn link, - this is to take the different types of fonts from the cdn website  --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- This part is used for internal styling by css -->
+
+</head>
+<body>
+    <script>
+        let menuBtn = document.querySelector('#menu-btn');
+        let navbar = document. querySelector('.header .flex .navbar'); 
+
+        var swiper = new Swiper(".course-slider",{
+            spaceBetween: 20,
+            grabCursor: true,
+            loop:true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                540: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        var swiper = new Swiper(".teachers-slider",{
+            spaceBetween: 20,
+            grabCursor: true,
+            loop:true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                540: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    
+
+
+  
+       
+       </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Source+Code+Pro:wght@200&display=swap');
+
+:root{
+    --green:#00E77F;
+    --white:#fff;
+    --light-white:#aaa;
+    --black:#3d3d3d;
+    --light-bg:#4b4b4b;
+
+}
+
+*::selection{
+    background-color : var(-white);   /* what all colors you have defined in the root section, you can use it here globally and apply it on the page*/
+    color : var(--black);
+}
+
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0; padding:0;
+    box-sizing : border-box;
+    outline : none; border : none;
+    text-decoration : none;
+    transition : .2s linear;
+    text-transform : capitalize;
+}
+
+html{
+    font-size : 62.5%;
+    overflow-x: hidden;
+    scroll-behavior : smooth;
+    scroll-padding-top : 8rem;
+}
+
+::-webkit-scrollbar{
+    height: .5rem;
+    width : 1rem;
+}
+
+::-webkit-scrollbar-track{
+ background-color : transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color : var(--green);
+    
+   }
+
+::-webkit-scrollbar-track{
+    background-color : var(--green);
+    border-radius : 5rem;
+}
+
+body{
+    background-color : var(--black);
+}
+
+section{
+    max-width : 1200px;
+    margin : 0 auto;
+    padding : 2rem;
+}
+
+.btn{
+    display : inline-block;
+    margin-top: 1rem;
+    border-radius : 5rem;
+    background-color : var(--light-bg);
+    cursor : pointer;
+    color:var(--white);
+    font-size : 1.8rem;
+    padding: 1rem 3rem;
+}
+
+.btn:hover{
+    background-color : var(--white);
+    color : var(--black);
+}
+
+.heading{
+    margin-bottom : 2.5rem;
+    text-align : center;
+    font-size : 4rem;
+    color:var(--white);
+    text-transform: uppercase;
+
+}
+
+.heading span{
+    color: var(--green);
+    text-transform: uppercase;
+}
+
+.header{
+    position : fixed;
+    top:0; left:0; right:0; 
+    z-index : 1000; 
+    background-color : var(--light-bg);   /* This is for the header class*/
+} 
+
+.header .flex {   
+    position : relative;                      /* This is for the flex class inside the header section */
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+
+}
+
+.header .flex .logo {                         /* This is for the logo element which is inside the flex class which is again further inside the head*/r
+  font-size : 2.5rem;                         /* Here, education element is the logo */
+  color : var(--white);
+}
+
+.header .flex .navbar a{
+    margin-left : 2rem;
+    color : var(--light-white);
+    font-size : 2rem;
+}
+
+.header .flex .navbar a:hover {              /* Hover means to view something in hidden when you click or hover on the respective item*/
+     color : var(--green);
+}
+
+#menu-btn {
+    cursor : pointer;
+    color : var(--white);
+    font-size : 2.5rem;
+    display : none;
+}                                          /* For id class, we are using the # */
+
+.home{
+    margin-top: 6rem;
+}
+
+.home .row{
+    display : flex;
+    align-items : center;
+    flex-wrap : wrap-reverse;
+    gap : 1.5rem;
+}
+
+.home .row .content{
+    flex :1 1 40rem;
+    text-align : center;
+}
+
+.home .row .image{
+    flex :1 1 40rem;
+}
+
+.home .row .image img{
+    width : 100%;
+}
+
+.home .row .content h3{
+   margin-bottom : 1rem;
+   font-size : 10rem;
+   color : var(--white);
+   line-height: 1;
+}
+
+.home .row .content h3 span{
+   color:var(--green);
+}
+
+.count .box-container {
+display : grid;             /* This property will display the elements in the grid format giving some adequate amount of spacing */
+grid-template-columns : repeat(auto-fit, minmax(27rem, 1fr));
+gap : 1.5rem;
+align-items : flex-start;
+}
+
+.count .box-container .box{
+    background-color: var(--light-bg);
+    border-radius : .5rem;
+    padding : 2rem;
+    display: flex;
+    align-items : center;
+    justify-content: center;
+    gap : 2.5rem;
+}
+
+.count .box-container .box i {
+    font-size: 5rem;   /* This exponentially increases the size of the object by 5 times */
+    color : var(--green);
+}
+
+.count .box-container .box .content h3{
+font-size: 2rem;
+color : var(--white);
+margin-bottom : .5rem;
+}
+
+.count .box-container .box .content p{
+    font-size: 1.6rem;
+    color : var(--white);
+}
+
+.about .row{
+    display : flex;
+    align-items : center;
+    gap : 1.5rem;
+    flex-wrap : wrap;
+}
+
+.about .row .image{
+    flex : 1 1 40rem;
+}
+
+.about .row .image img{
+    width : 100%;
+}
+
+.about .row .content{
+    text-align : center;
+    flex : 1 1 40rem;
+}
+
+.about .row .content h3{
+    font-size : 3rem;
+    color:var(--white);
+}
+
+.about .row .content p{
+    padding : 1rem 0;
+    line-height : 2;   /* We increased the fotn size of the paragraph near the image in the content section and gave adequate spacing to that*/
+    font-size : 1.6rem;
+    color:var(--light-white);
+}
+
+.courses .slide{
+    background-color : var(--light-bg);
+    border-radius: 0.5rem;
+    text-align : center;
+    padding : 2rem;
+    margin-bottom : 4rem;
+    user-select: none;
+}
+
+.courses .slide img{
+       height : 25rem;
+       width : 100%; /* This statement gives equal height and width spacing to all the images in the slide section */
+}
+
+.courses .slide h3{
+    margin : 1.5rem 0;
+    font-size : 2rem;
+    color : var(--white);
+}
+
+.courses .slide p{
+    line-height : 2;
+    font-size : 1.6rem;
+    color : var(--light-white);
+}
+
+.teachers .slide{
+    position : relative; 
+    overflow: hidden;
+    margin-bottom: 4rem;
+    user-select: none;
+}
+
+.teachers .slide img{
+    height : 50=5rem;
+    width : 100%; /* Because of the height and width, the images are appearing like that - you can still make modifications on your own */
+    border-radius : 0.5rem;
+    }
+
+.teachers .slide h3{
+    margin-top: 1.5rem;
+    font-size : 2rem;
+    color : var(--white);
+    text-align : center;
+}
+
+.teachers .slide .share{
+    position : absolute;
+    top: 1rem; left:0rem;
+}
+
+.teachers .slide:hover .share{
+    left: 2rem;
+}
+
+.teachers .slide .share a{
+    display : block;
+    margin-top : 1rem;
+    height : 4.5rem;
+    width : 4.5rem;
+    line-height : .5rem;
+    background-color : var(--white);
+    color: var(--black);
+    text-align : center;
+    font-size: 2rem;
+}
+
+.teachers .slide .share a:hover{
+    background-color : var(--green);
+    color : var(--white);
+}
+
+.reviews-slider .slide{
+   border-radius: .5rem;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    margin-bottom: 4rem;
+    user-select: none;
+
+}
+
+.reviews-slider .slide p{
+    line-height : 2;
+    font-size: 1.6rem;
+    color:var(--light-white);
+}
+
+.reviews-slider .slide .user{
+    display: flex;
+    align-items: center ;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.reviews-slider .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.reviews-slider .slide .user h3{
+    font-size: 2rem;
+    color:var(--white);
+    margin-bottom : .7rem;
+}
+
+.reviews-slider .slide .user .stars i{
+    font-size: 1.5rem;
+    color: var(--green);
+}
+
+.contact .row{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact .row .image{
+    flex: 1 1 40rem;
+}
+
+.contact .row .image img{
+    width : 100%;
+}
+
+.contact .row form{
+    flex: 1 1 40rem;
+}
+
+.contact .row form .box{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    background-color: var(--light-bg);
+    font-size: 1.8rem;
+    color:var(--white);
+    /* padding: 1.4rem; */
+    text-transform: none;
+}
+
+.contact .row form span{
+    font-size: 1.6rem;
+    color: var(--light-white);
+}
+
+.contact .row form .radio{
+    /* margin-top : 2rem */
+    margin-bottom: 1rem;
+   
+}
+
+.contact .row form .radio label{
+    font-size: 1.6rem;
+    color: var(--light-white);
+    margin-left: .5rem;
+    cursor: pointer;
+
+}
+
+.contact .row form .radio #female{    /* # is for id and . is for classes and sections */
+    margin-left: 2rem;
+}
+
+.contact .row form .radio input{
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--light-white);
+    cursor: pointer;
+}
+
+.contact .row form .radio input:checked{
+    background-color: var(--green);
+    border-radius: 5rem;
+}
+
+.contact .row form .radio #male:checked ~label[for="male"]{
+    color: var(--green);
+
+}
+
+.contact .row form .radio #female:checked ~label[for="female"]{
+    color: var(--green);
+
+}
+
+.footer{
+    background-color: var(--light-bg);
+    text-align: center; 
+}
+
+.footer .share a{
+    margin: 0 .3rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius : 50%;
+    font-size: 2rem;
+    color: var(--white);
+    
+}
+
+.footer .share a:hover{
+    background-color: var(--green);
+
+}
+
+.footer .credit{
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    padding: 1.5rem;
+    border-top: .1rem solid var(--light-white);
+    font-size: 2rem;
+    color: var(--light-white);
+}
+
+.footer .credit span{
+    color: var(--green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991px){
+    html {
+        font-size : 55%;
+    }
+}
+
+@media (max-width: 768px){
+    #menu-btn {
+        display : inline-block;
+    }   
+
+ 
+    .header .flex .navbar{
+        position :absolute;
+        top:99%; left:0; right:0;
+        border-top: .1rem solid var(--light-white);
+        border-bottom: .1rem solid var(--light-white);
+        background-color : var(--light-bg);
+    }
+    .header .flex .navbar a{
+        display : block;
+        margin : 2rem;
+    }
+
+    .home .row .content h3{
+        font-size : 6rem;
+    }
+
+}
+
+@media (max-width: 450px){
+    html {
+        font-size : 50%;
+    }
+
+    .home .row .content h3{
+        font-size : 5rem;
+    }
+
+    .heading{
+        font-size : 3rem;
+    }
+}
+
+
+
+
+
+
+
+    </style>
+
+    <!-- Header section starts -->
+    <header class="header">
+        <section class ="flex">
+
+            <a href ="#home" class="logo"> Learn World Academy  </a> <!-- This is for the bookmark and we are using it through the anchor tag-->
+
+            <nav class = "navbar">
+                <a href ="#home"> home </a>
+                <a href ="#about"> about </a> 
+                <a href ="#courses"> courses </a> 
+                <a href ="#teachers"> teachers </a> 
+                <a href ="#reviews"> reviews </a> 
+                <a href ="#contact"> contact </a> 
+            </nav>
+
+            <div id = "menu-btn" class="fas fa-bars"></div>
+            
+
+
+        </section>
+        </header>
+    <!-- Header section ends -->
+
+    <!-- Home section starts -->
+    <section class="home" id="home">
+
+        <div class = "row">
+            <div class ="content">
+                <h3> Learn <span> world academy </span></h3>
+                <a href = "#contact" class ="btn"> contact us </a>
+            </div>
+
+            <div class = "image"> 
+                <img src ="https://ouch-cdn2.icons8.com/VcVgp4Oe_enAhU8XCVsaOB64w--AZdXZlMyx8iYmwBg/rs:fit:476:456/extend:false/wm:1:re:0:0:0.8/wmid:ouch/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTI3/LzQxODFmMTUwLTBh/YjQtNDEwMi04YTA2/LWQwYmViNjVkYmFh/OC5wbmc.png" alt ="">
+            </div>
+
+            
+            </div>
+        </div>
+    </section>
+    <!-- Home section ends -->
+   
+    <!-- Count section starts -->
+<section class="count">
+
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="content">
+                <h3> 150+</h3>
+                <p> courses </p>
+        </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-graduate"></i> <!-- fas fa- (...) type whatever you want inside the brackets to get the proper and exact image imported from the net -->
+            <div class="content">
+                <h3> 1300+ </h3>
+                <p> courses </p>
+                <p> students </p>
+        </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-chalkboard-user"></i> 
+            <div class="content">
+                <h3> 80+ </h3>
+                <p> teachers </p>
+                </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-face-smile"></i> 
+            <div class="content">
+                <h3> 100% </h3>
+                <p> satisfaction </p>
+                </div>
+        </div>
+
+</div>
+
+</section>
+    <!-- Count section ends -->
+
+    <!-- The about section of the online education system starts here -->
+
+    <section class="about" id="about">
+
+        <div class="row">
+     <div class="image">
+<img src = "https://img.freepik.com/free-vector/digital-online-education-concept-blank-space-laptop_255625-422.jpg" alt = "">  <!-- For copying the image, simply clone the image address of it into the code that you are managing-->
+
+     </div>
+     <div class="content">
+        <h3> why choose us?</h3>
+        <p> The schedule tends to be flexible and you can learn at your own pace. We are differently designed and sturcutred from other systems 
+            which means you can access your program and course on your own time and comfort. 
+        </p>
+        <a href = "#contact" class="btn"> contact us  </a>
+     </div>
+
+        </div>
+
+    </section>
+
+    <!-- The about section of the online education system ends here -->
+
+    <!-- The courses section starts here -->
+    <section class="courses" id="courses">
+        <h1 class="heading">
+            our <span> courses </span>
+        </h1> 
+        <div class="swiper course-slider">
+
+            <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide">
+            <img src = "https://www.creative-tim.com/blog/content/images/size/w960/2022/01/which-development-job-is-right-for-you.jpg" alt = "">
+            <h3> web development </h3>
+            <p> Web development is a field that evolves rapidly. Online courses often offer updated content to keep up with the latest technologies and industry trends.
+            </p>
+         </div>
+            </div>
+        </div>     
+
+        <div class="swiper-slide slide">
+            <h3> digital marketing </h3>
+            <img src="https://cdn2.hubspot.net/hubfs/103224/how-to-do-digital-marketing-in-small-business720.png" alt="">
+            <p> Digital marketing is integral to modern businesses. Online courses often cover up-to-date strategies, tools, and trends, ensuring you learn relevant skills for the current market.
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <img src = "https://i.pinimg.com/564x/ce/fc/5c/cefc5ce5776187b14bdb94e3a2e05355.jpg" alt="">
+
+            <h3> science and biology  </h3>
+            <p> Many online courses are developed and led by experts, professors, and professionals in the field, ensuring high-quality educational materials and up-to-date information.
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <h3> graphic designing </h3>
+            <img src="https://www.digifloor.com/wp-content/uploads/2018/03/graphics-design-for-startups.jpg"alt="">
+            <p> Online platforms offer a wide range of graphic design courses, catering to different skill levels, specialties (such as UI/UX design, illustration, etc.), and software proficiency.
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <img src = "https://www.english-efl.com/wp-content/uploads/2019/12/small-class-t.jpg" alt = "">
+            <h3> teaching </h3>
+            <p> Hone your skills and gain valuable teaching experience. Do work that you're passionate about and make a positive impact on other people's lives. Be your own boss and avoid distractions of working in a traditional work environment.
+            </p>
+         </div>
+
+         <div class="swiper-slide slide">
+            <h3> engineering </h3>
+            <img src="https://www.theengineer.co.uk/media/uovbbeys/peter_dearman_and_engineers_working_on_the_dearman_engine.jpg"alt="">
+            <p> As an engineer, you can choose to work on projects that benefit society. Engineers help clean the environment, develop prosthetic aids, create clean and efficient transportation systems, find new sources of energy, alleviate the world's hunger problems, and increase the standard of living in underdeveloped countries.
+            </p>
+         </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>   
+
+                             <!-- Make sure to create a div or class whenever you are creating something-->
+                                <!-- so that you can style it easily using css/bootstrap part-->
+    </section>
+    <!-- The courses section ends here -->
+
+    <!-- Teachers section starts here -->
+<section class="teachers" id="teachers">
+    <h1 class="heading">expert <span> tutors </span></h1>
+
+    <div class="swiper-slide slider">
+     <div class="swiper-wrapper">
+      <div class="slide">
+        <img src ="https://dev.quantumcloud.com/simple-business-directory/wp-content/uploads/2018/01/brianjohnsrud.jpg"alt="">
+        <div class="share">
+            <a href="https://www.facebook.com/theejohndoe" target="_blank" class ="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/whatjohndoesays?lang=en" target ="_blank" class ="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/theejohndoe/?hl=en" target ="_blank" class ="fab fa-instagram"></a>
+            <a href="https://uk.linkedin.com/company/john-doe" target ="_blank" class ="fab fa-linkedin"></a>
+        </div>
+        <h3> john deo </h3>
+      </div>
+
+      <div class="slide">
+        <img src ="https://i1.rgstatic.net/ii/profile.image/514628128919552-1499708315248_Q512/Abdul-Majeed-2.jpg"alt="">
+        <div class="share">
+            <a href="https://www.facebook.com/Abdul-Majeed-2" target="_blank" class ="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/immajeed6?lang=en" target ="_blank" class ="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/abdulmajeedsdpi/?hl=en" target ="_blank" class ="fab fa-instagram"></a>
+            <a href="https://in.linkedin.com/in/abdul-majeed-3ab983111" target="_blank" class ="fab fa-linkedin"></a>
+        </div>
+        <h3> Abdul Majeed </h3>
+      </div>
+
+      <div class="slide">
+        <img src ="https://vit.ac.in/sites/default/files/schools/faculty/11324.jpg"alt="">
+        <div class="share">
+            <a href="https://www.facebook.com/search/top/?q=ADitya%20Singh" class ="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/CryptooAdy" class ="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/adityasinghrajput_official/?hl=en" class ="fab fa-instagram"></a>
+            <a href="https://in.linkedin.com/in/adityas76" class ="fab fa-linkedin"></a>
+        </div>
+        <h3> Coumeran G  </h3>
+    </div>
+ </div>
+
+<div class="swiper-pagination"></div>
+
+   
+    </div>
+</section>
+    <!-- Teachers section ends here -->
+
+    <!-- review section starts here -->
+    <section class="reviews" id="reviews">
+        <h1 class="heading">student's <span>reviews </span></h1>
+
+                
+        <div class="reviews-slider">
+            <div class="w">
+                <div class="slide">
+                    <p> I really enjoyed the online course. I thought it was well planned and layed out, easy for me to follow. The work load(h.w. & test)was just enough, so i could finish everything with enough time, learn about the topics and not feel over loaded and rushed.</p>
+                    <div class="user">
+                        <img src="https://t4.ftcdn.net/jpg/02/42/52/27/360_F_242522709_ZhoDmO1L1PHkL6yvVVNutSBGsk1Ob7m0.jpg" alt="">
+                        <div class="user-info">
+                            <h3> pranav p </h3>
+                            <div class="stars">
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star-half-alt"> </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+        <div class="reviews-slider">
+            <div class="w">
+                <div class="slide">
+                    <p> Overall I really like this class because all lectures, assignments, and tests are straight forward. A couple things I dislike about the class are that there should be more opportunities for extra credit and it would be awesome if the final was an objective essay about what we have learned in this class or what we like about the class. I believe that I have more knowledge about ocean, weather, and marine lives and hopefully, I can use them in real life.
+</p>
+                    <div class="user">
+                        <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" alt="">
+                        <div class="user-info">
+                            <h3> vivek singh </h3>
+                            <div class="stars">
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star-half-alt"> </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+        <div class="reviews-slider">
+            <div class="w">
+                <div class="slide">
+                    <p> The course was everything you said it would be, fun but a lot of work. And it was! I enjoyed the web-labs because they were a lot of fun and easy to understand. And the answers were usually somewhere in the text. I also liked the assignments that required us to get online. Sometimes articles aside from the reading book gave me a better idea and understanding of the subject for that week. What I disliked was the short essay question because I found it difficult to explain certain concepts without introducing in some way, Ideas from the course notes or book (keeping in mind plagiarism). I never expected to learn so much from an online class; I now see the ocean life in a whole new way. I know I could have done better, but in the end I learned that an online class could be as much work or more than a regular class. However, I still enjoyed it very much.
+
+                    </p>
+                    <div class="user">
+                        <img src="https://img.freepik.com/free-photo/portrait-hesitant-man-purses-lips-looks-bewilderment-feels-doubt_273609-16785.jpg" alt="">
+                        <div class="user-info">
+                            <h3> Shashank K  </h3>
+                            <div class="stars">
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star-half-alt"> </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+        <div class="reviews-slider">
+            <div class="w">
+                <div class="slide">
+                    <p> I really liked learning about the tide pools and local labs.  Originally I enrolled in this class because I am not from CA or even a coastal areas ( I am from WI) so I thought it would be good to learn a little about the waves, swells and currents as I venture into the water a little more the longer I have lived here.  I had no idea the depth of the earth’s oceans or the importance of them.  I really liked the online option of this class because I am a very busy person (2 jobs and college).  The only thing that was a little confusing at first was all the different resources.  In the beginning I had a hard time finding the answers to questions because I wasn’t sure where to look.  The book, Notes, PowerPoint presentations, web-labs, the cd with the book… Just was a little much but as the semester progressed I got the feel of it and benefited from all the information. 
+
+                    </p>
+                    <div class="user">
+                        <img src="data:image/jpeg;base64,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" alt="">
+                        <div class="user-info">
+                            <h3> shravan reddy  </h3>
+                            <div class="stars">
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star-half-alt"> </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+        <div class="reviews-slider">
+            <div class="w">
+                <div class="slide">
+                    <p> I will say I learned quite a bit in this course, I also enjoyed myself…. So that says something.  The assignments were very beneficial to the entire learning process.  However, I felt the tests were a bit unexpected, (some material was not discussed thoroughly enough.)  If there was one thing that I would recommend to help the class it would be an accompanying audio lecture to the power points.  I feel like this would have cleared up some of the points that I had neglected to focus on.  Some food for thought, so thank you for an incredible class.      </p>
+                    <div class="user">
+                        <img src="data:image/jpeg;base64,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" alt="">
+                        <div class="user-info">
+                            <h3> gokulam k  </h3>
+                            <div class="stars">
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star"> </i>
+                                <i class="fas fa-star-half-alt"> </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- review section ends here -->
+
+    <!-- contacts section starts here -->
+
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us </h1>
+        <div class="row">
+          <div class="image">
+            <img src="https://media.istockphoto.com/id/1255985762/vector/contact-us-green-3d-button-with-hand-pointer-clicking-white-background-vector.jpg?s=612x612&w=0&k=20&c=std05Pypbc5RWXPXQvInhVy3caZDma5s-dPFNmOqhj4=" alt="">
+          </div>
+
+          <form action="" method="post">
+            <span> your name </span>
+            <input type="text" required placeholder="enter your full name" maxlength="50" name="name" class="box">
+            <span> your email </span>
+            <input type="email" required placeholder="enter your valid email" maxlength="50" name="email" class="box">
+            <span> your number </span>
+            <input type="number" required placeholder="enter your valid number" max="99999999999999" min="0" name="number" class="box" onkeypress="if(this.value.
+            length == 10) return false;">
+              <span>select course </span>
+              <select name="courses" class="box" required>
+              <option value ="" disabled selected>select the course --</option>
+              <option value="web development">web development </option>
+              <option value="science and biology">sceince and biology </option>
+              <option value="engineering">engineering </option>
+              <option value="digital marketing">digital marketing </option>
+              <option value="graphic design">graphic design </option>
+              <option value="teaching">teaching </option>
+              <option value="social studies">social studies </option>
+              <option value="data analysis">data analysis </option>
+              <option value="artificial intelligence">artificial intelligence </option>
+    
+              </select>
+              <span>select gender </span>
+              <div class="radio">
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">male</label>
+
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">female </label>
+              </div>
+              <input type="submit" value="send message" class="btn" name="send">
+
+
+          </form>
+        </div>
+    </section>
+
+    <!-- contacts section ends here -->
+
+    <!-- footer section starts here -->
+    <footer class="footer">
+        <section>
+            <div class="share">
+                <a href="https://www.facebook.com/vituniversity/" target="_blank" class="fab fa-facebook-f"></a> <!-- Instead of hastag, give some random links so that users can access -->
+                <a href="https://twitter.com/VIT_Uni_Vellore" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://in.linkedin.com/school/vellore-institute-of-technology/" target="_blank" class="fab fa-linkedin"></a>
+                <a href="https://www.instagram.com/vellore_vit/?hl=en" target = "_blank" class="fab fa-instagram"></a>
+                <a href="https://www.youtube.com/channel/UCA9pirjKrKlg2bCvPKRDkyg" target ="_blank" class="fab fa-youtube"></a>
+            </div>
+
+            <div class="credit"> &copy; copyright @2022 by <span> Mr. Kota Shashank </span> | All rights reserved! </div>
+        </section>
+    </footer>
+
+    <!-- footer section ends here -->
+
+   <!-- This is the swiper js link -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+
+</body>
+</html>
+
+<!-- After finishing or completing the entire code, make specific mnodifications and insert your university into it-->
